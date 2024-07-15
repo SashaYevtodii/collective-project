@@ -1,5 +1,6 @@
+привіт в гіт хаб добав код
 class Shop:
-    def __init__(self):
+    def init(self):
         self.clothes = [
             {"id": 1, "name": "Футболка", "price": 500},
             {"id": 2, "name": "Штани", "price": 1000},
@@ -98,6 +99,7 @@ class Shop:
         print(f'Спосіб оплати: {self.payment_method}')
         print("Дякуємо за ваше замовлення!")
 
+        # Зберігаємо замовлення в історії
         order = {
             "items": self.cart.copy(),
             "total": total,
@@ -106,8 +108,7 @@ class Shop:
         }
         self.order_history.append(order)
         self.cart.clear()
-
-    def add_new_clothes(self):
+def add_new_clothes(self):
         print("Додавання нового товару:")
         try:
             name = input("Введіть назву товару: ")
@@ -131,7 +132,6 @@ class Shop:
                 print(f'Загальна сума: {order["total"]} грн')
                 print(f'Адреса доставки: {order["address"]}')
                 print(f'Спосіб оплати: {order["payment_method"]}')
-
 
 def main():
     shop = Shop()
@@ -163,5 +163,5 @@ def main():
         else:
             print("Неправильний вибір. Спробуйте ще раз.")
 
-if __name__ == "__main__":
+if name == "main":
     main()
